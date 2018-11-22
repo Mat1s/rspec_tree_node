@@ -17,8 +17,20 @@ RSpec.describe TreeNode do
     end
 
     it 'render leaf from node left1' do
-    	expect(0).to eq(1)
-      #expect(left1.binary_tree_path(left1)).to eq(["1->4"])
+      expect(left1.binary_tree_path(left1)).to eq(["1->4"])
+    end
+  end
+
+  context 'when created all leaf,' do
+    let(:root_true) { TreeNode.new(3) }
+    let(:root_false) { TreeNode.new() }
+    
+    it 'render if not other leaf and nodes' do
+      expect(root_true.binary_tree_path(root_true)).to eq([3])
+    end
+    
+    it 'render root node if not given params in method #binary_tree_path()' do
+      expect(root_false.binary_tree_path()).to eq([10])
     end
   end
 end
