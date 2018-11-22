@@ -21,16 +21,11 @@ RSpec.describe TreeNode do
     end
   end
 
-  context 'when created all leaf,' do
+  context 'when no created any leaf,' do
     let(:root_true) { TreeNode.new(3) }
-    let(:root_false) { TreeNode.new() }
     
     it 'render if not other leaf and nodes' do
       expect(root_true.binary_tree_path(root_true)).to eq([3])
-    end
-    
-    it 'render root node if not given params in method #binary_tree_path()' do
-      expect(root_false.binary_tree_path()).to eq([10])
     end
   end
 end

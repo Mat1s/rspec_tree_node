@@ -1,15 +1,19 @@
 class TreeNode
   attr_accessor :val, :left, :right
   def initialize(val)
-    @val = val || 10
+    @val = val 
     @left, @right = nil, nil
     @result = []
   end
-
-  def binary_tree_path(root, value = root.val)
+  def check_for_branch(root)
     arr = []
     arr.push(root.left) if root.left
     arr.push(root.right) if root.right
+    arr
+  end
+
+  def binary_tree_path(root, value = root.val)
+    arr = check_for_branch(root)
     @result.push(value) unless root.left || root.right
     arr.each do |i|
       binary_tree_path(i, value.to_s + '->' + i.val.to_s)
