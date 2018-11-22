@@ -1,7 +1,7 @@
 class TreeNode
   attr_accessor :val, :left, :right
   def initialize(val)
-    @val = val
+    @val = val || 10
     @left, @right = nil, nil
     @result = []
   end
@@ -18,14 +18,14 @@ class TreeNode
   end
 end
 
-root = TreeNode.new(10)
-l14 = root.left = TreeNode.new(14)
-r17 = root.right = TreeNode.new(17)
-r61 = l14.right = TreeNode.new(61)
-l65 = l14.left = TreeNode.new(65)
-l31 = r61.left = TreeNode.new(31)
-r35 = r61.right = TreeNode.new(35)
-r49 = r35.right = TreeNode.new(49)
-l65 = r35.left = TreeNode.new(65)
-p root.binary_tree_path(root)
-p r61.binary_tree_path(r61)
+# root = TreeNode.new(10)
+# l14 = root.left = TreeNode.new(14)
+# r17 = root.right = TreeNode.new(17)
+# r61 = l14.right = TreeNode.new(61)
+# l65 = l14.left = TreeNode.new(65)
+# l31 = r61.left = TreeNode.new(31)
+# r35 = r61.right = TreeNode.new(35)
+# r49 = r35.right = TreeNode.new(49)
+# l65 = r35.left = TreeNode.new(65)
+# p root.binary_tree_path(root)
+# p r61.binary_tree_path(r61)
