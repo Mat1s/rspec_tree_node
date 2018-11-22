@@ -5,6 +5,12 @@ class TreeNode
     @left, @right = nil, nil
     @result = []
   end
+  
+  def binary_tree_path(root, value = root.val)
+    arr = check_for_branch(root)
+    fill_results(arr, value, root)
+  end
+
   def check_for_branch(root)
     arr = []
     arr.push(root.left) if root.left
@@ -12,8 +18,7 @@ class TreeNode
     arr
   end
 
-  def binary_tree_path(root, value = root.val)
-    arr = check_for_branch(root)
+  def fill_results(arr, value, root)
     @result.push(value) unless root.left || root.right
     arr.each do |i|
       binary_tree_path(i, value.to_s + '->' + i.val.to_s)
