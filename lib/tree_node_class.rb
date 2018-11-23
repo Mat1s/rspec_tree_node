@@ -19,7 +19,7 @@ class TreeNode
   end
 
   def fill_results(arr, value, root)
-    @result.push(value) unless root.left || root.right
+    @result.push(value.to_s) unless root.left || root.right
     arr.each do |i|
       binary_tree_path(i, value.to_s + '->' + i.val.to_s)
     end
@@ -38,3 +38,4 @@ end
 # l65 = r35.left = TreeNode.new(65)
 # p root.binary_tree_path(root)
 # p r61.binary_tree_path(r61)
+# p r61.check_for_branch(r61)
