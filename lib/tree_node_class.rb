@@ -1,11 +1,11 @@
 class TreeNode
   attr_accessor :val, :left, :right
   def initialize(val)
-    @val = val 
+    @val = val
     @left, @right = nil, nil
     @result = []
   end
-  
+
   def binary_tree_path(root, value = root.val)
     arr = check_for_branch(root)
     fill_results(arr, value, root)

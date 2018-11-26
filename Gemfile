@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
-gem 'rspec'
 gem 'coderay'
+gem 'rspec'
+gem 'rubocop'
